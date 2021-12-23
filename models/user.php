@@ -114,6 +114,32 @@ class User {
     //     }
     // }
 
+
+    public function signIn( $email_, $passwd_ ) {
+    
+        $user = $this -> getUser( $email_ );
+
+        if ( password_verify( $passwd_, $user -> passwd ) ) {
+            session_start();
+
+            $_SESSION['id'] = $user -> id;
+            $_SESSION['name'] = $user -> username;
+            $_SESSION['age'] = $user -> age;
+            $_SESSION['rol'] = $user -> rol;
+
+            if ( $_SESSION['rol'] == 'admin' ) {
+                echo '../admin/home.html';
+            }else if( $_SESSION['rol'] == 'user' ) {
+                echo '../user/home.html';
+            }
+
+        }else {
+            echo 'error_login';
+        }
+
+        
+
+    }
 }
 
 

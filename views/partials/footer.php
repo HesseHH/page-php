@@ -15,6 +15,7 @@
     </div>
 </div>
 
+<script src="../../assets/js/validations.js"></script>
 
 
 <body>
