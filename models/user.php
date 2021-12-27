@@ -130,7 +130,7 @@ class User {
             if ( $_SESSION['rol'] == 'admin' ) {
                 echo '../admin/home.html';
             }else if( $_SESSION['rol'] == 'user' ) {
-                echo '../user/home.html';
+                echo '../user/home.php';
             }
 
         }else {

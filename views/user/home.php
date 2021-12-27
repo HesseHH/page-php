@@ -1,20 +1,15 @@
+
+<?php session_start(); ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home</title>
+    <title>Document</title>
 </head>
 <body>
-
-    <nav>
-
-    </nav>
-
-    <div class="container">
-        <p>ESTO ES EL DIRECTORIO HOME</p>
-    </div>
-    
+    <h1>User home - <?php echo $_SESSION['id']." - ".$_SESSION['name']." - ".$_SESSION['age']." - ".$_SESSION['rol']; ?></h1>
 </body>
 </html>

@@ -8,6 +8,15 @@
     <title>Document</title>
 </head>
 <body>
+    <?php
+        $a = ['a', 'b', 'c'];
+
+        foreach ($a as $key => $value) {
+            echo $value;
+        }
+
+        echo "";
+    ?>
 
     <div class="container">
 
@@ -119,6 +128,8 @@
 
             print("contraseña incorrecta");
         }
+
+
 
         ?>
         </h1>
