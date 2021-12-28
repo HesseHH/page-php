@@ -6,7 +6,7 @@ class User {
 
     private $pdo;
 
-    public $username, $email, $age, $password;
+    public $id, $username, $email, $age, $password;
 
     function __construct() {
         try {
@@ -16,7 +16,7 @@ class User {
         }
     }
 
-    public function list() {
+    public function getAllUsers() {
         try {
 
             $sql = "SELECT * FROM users";
@@ -48,17 +48,36 @@ class User {
 
     }
 
+    public function getUserById( $idUser ) {
+
+        try {
+
+            $sql = "SELECT * FROM users WHERE id = ?";
+            
+            $res = $this->pdo->prepare( $sql );
+            $res->execute(array( $idUser ));
+
+            return $res->fetch(PDO::FETCH_OBJ);
+
+        } catch (Exception $e) {
+            die($e->getMessage());
+        }
+
+    }
+
     public function saveUser( User $data ) {
 
         try {
 
-            $sql = "INSERT INTO users(id, username, email, age, passwd) VALUES(null, ?, ?, ?, ?)";
+            $sql = "INSERT INTO users(id, username, email, age, passwd, rol) VALUES(null, ?, ?, ?, ?, ?)";
             
             $res = $this->pdo->prepare( $sql );
 
             $hash = password_hash( $data->password, PASSWORD_BCRYPT, [ 'cost' => 12 ] );
 
-            $res->execute(array( $data->username, $data->email, $data->age, $hash ));
+            $res->execute(array( $data->username, $data->email, $data->age, $hash, 'user' ));
+
+            echo 'OK';
 
         } catch (Exception $e) {
             die($e->getMessage());
@@ -76,7 +95,9 @@ class User {
 
             $hash = password_hash( $data->password, PASSWORD_BCRYPT, [ 'cost' => 12 ] );
 
-            $res->execute(array( $data->username, $data->email, $data->age, $hash ));
+            $res->execute(array( $data->username, $data->email, $data->age, $hash, $data->id ));
+
+            echo 'OK';
 
         } catch (Exception $e) {
             die($e->getMessage());
@@ -92,6 +113,8 @@ class User {
 
             $res = $this->pdo->prepare( $sql );
             $res->execute(array( $idUser ));
+
+            echo 'OK';
 
         } catch (Exception $e) {
             die($e->getMessage());
@@ -119,25 +142,27 @@ class User {
     
         $user = $this -> getUser( $email_ );
 
-        if ( password_verify( $passwd_, $user -> passwd ) ) {
-            session_start();
-
-            $_SESSION['id'] = $user -> id;
-            $_SESSION['name'] = $user -> username;
-            $_SESSION['age'] = $user -> age;
-            $_SESSION['rol'] = $user -> rol;
-
-            if ( $_SESSION['rol'] == 'admin' ) {
-                echo '../admin/home.html';
-            }else if( $_SESSION['rol'] == 'user' ) {
-                echo '../user/home.php';
+        if ( $user ) {
+            if ( password_verify( $passwd_, $user -> passwd ) ) {
+                session_start();
+    
+                $_SESSION['id'] = $user -> id;
+                $_SESSION['name'] = $user -> username;
+                $_SESSION['age'] = $user -> age;
+                $_SESSION['rol'] = $user -> rol;
+    
+                if ( $_SESSION['rol'] == 'admin' ) {
+                    echo '../admin/home.html';
+                }else if( $_SESSION['rol'] == 'user' ) {
+                    echo '../user/home.php';
+                }
+    
+            }else {
+                echo 'error_login';
             }
-
         }else {
             echo 'error_login';
         }
-
-        
 
     }
 }

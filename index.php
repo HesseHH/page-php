@@ -8,15 +8,6 @@
     <title>Document</title>
 </head>
 <body>
-    <?php
-        $a = ['a', 'b', 'c'];
-
-        foreach ($a as $key => $value) {
-            echo $value;
-        }
-
-        echo "";
-    ?>
 
     <div class="container">
 
@@ -31,7 +22,7 @@
                     <a href="./views/session/sign_in.php" class="btn btn-primary">Sign In</a>
                 </div>
                 <div class="col-6 text-start">
-                    <a href="#" class="btn btn-primary">Sign Up</a>
+                    <a href="./views/session/sign_up.php" class="btn btn-primary">Sign Up</a>
                 </div>
     
             </div>
@@ -46,13 +37,13 @@
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias reiciendis necessitatibus provident quisquam nisi officiis doloremque magnam distinctio blanditiis eum?</p>
             </div>
             <div class="col-6">
-                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Accusantium itaque cumque expedita minima consectetur et neque ipsum distinctio fugit consequatur aliquid nulla, optio corporis quo eligendi praesentium tenetur qui totam fugiat unde doloribus voluptates cupiditate libero. Nihil blanditiis magnam placeat?</p>
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Accusantium itaque cumque expedita minima consectetur et</p>
             </div>
         </div>
 
         <div class="row p-3 m-2">
             <div class="col-6">
-                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Accusantium itaque cumque expedita minima consectetur et neque ipsum distinctio fugit consequatur aliquid nulla, optio corporis quo eligendi praesentium tenetur qui totam fugiat unde doloribus voluptates cupiditate libero. Nihil blanditiis magnam placeat?</p>
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Accusantium itaque cumque expedita minima consectetur et </p>
             </div>
             <div class="col-6">
                 <h2>(2)Lorem ipsum dolor sit amet.</h2>
@@ -63,30 +54,30 @@
         <div class="row p-3 m-2">
             <div class="col-6">
                 <h2>(3)Lorem ipsum dolor sit amet.</h2>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias reiciendis necessitatibus provident quisquam nisi officiis doloremque magnam distinctio blanditiis eum?</p>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias reiciendis necessitatibus provident quisquam</p>
             </div>
             <div class="col-6">
-                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Accusantium itaque cumque expedita minima consectetur et neque ipsum distinctio fugit consequatur aliquid nulla, optio corporis quo eligendi praesentium tenetur qui totam fugiat unde doloribus voluptates cupiditate libero. Nihil blanditiis magnam placeat?</p>
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Accusantium itaque cumque expedita minima consectetur et </p>
             </div>
         </div>
 
         <div class="row p-3 m-2">
             <div class="col-6">
-                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Accusantium itaque cumque expedita minima consectetur et neque ipsum distinctio fugit consequatur aliquid nulla, optio corporis quo eligendi praesentium tenetur qui totam fugiat unde doloribus voluptates cupiditate libero. Nihil blanditiis magnam placeat?</p>
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Accusantium itaque cumque expedita minima consectetur et </p>
             </div>
             <div class="col-6">
                 <h2>(4)Lorem ipsum dolor sit amet.</h2>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias reiciendis necessitatibus provident quisquam nisi officiis doloremque magnam distinctio blanditiis eum?</p>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias reiciendis necessitatibus provident quisquam nisi officiis</p>
             </div>
         </div>
 
         <div class="row p-3 m-2">
             <div class="col-6">
                 <h2>(5)Lorem ipsum dolor sit amet.</h2>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias reiciendis necessitatibus provident quisquam nisi officiis doloremque magnam distinctio blanditiis eum?</p>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias reiciendis necessitatibus provident quisquam nm?</p>
             </div>
             <div class="col-6">
-                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Accusantium itaque cumque expedita minima consectetur et neque ipsum distinctio fugit consequatur aliquid nulla, optio corporis quo eligendi praesentium tenetur qui totam fugiat unde doloribus voluptates cupiditate libero. Nihil blanditiis magnam placeat?</p>
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Accusantium itaque cumque expedita minima consectetur et neque ipsum t?</p>
             </div>
         </div>
 
@@ -97,42 +88,11 @@
                 <a href="#" class="btn btn-primary">Sign In</a>
             </div>
             <div class="col-6 text-start">
-                <a href="#" class="btn btn-primary">Sign Up</a>
+                <a href="./views/session/sign_up.php" class="btn btn-primary">Sign Up</a>
             </div>
         </div>
 
         <?php require_once('./views/partials/footer.php'); ?>
-
-        <h1>
-        adsfas
-        <?php
-        require_once('./models/user.php');
-        $user = new User();
-        $data = $user->getUser('usuario3@gmail.com');
-
-        print_r($data->passwd);
-
-        print('<br>');
-        print('<br>');
-        print('<br>');
-        
-        $hash = password_hash('usuario4', PASSWORD_DEFAULT, [ 'cost' => 10]);
-        
-        print($hash);
-        print('<br>');
-
-        if (password_verify('usuario4', $hash)) {
-            # code...
-            print("contraseña correcta");
-        }else {
-
-            print("contraseña incorrecta");
-        }
-
-
-
-        ?>
-        </h1>
         
     </div>
     

@@ -22,7 +22,7 @@
                 <input class="form-control mb-3" type="email" name="email" id="email">
 
                 <label for="password">Password</label>
-                <input class="form-control" type="text" name="password" id="password">
+                <input class="form-control" type="password" name="password" id="password">
 
                 <input class="form-control btn btn-primary mt-4" type="button" id="login" value="Login">
 

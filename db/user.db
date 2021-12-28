@@ -14,8 +14,8 @@ CREATE TABLE IF NOT EXISTS users(
 
 );
 
-INSERT INTO users(id, username, email, age, passwd, rol) VALUES (null, "usuario1", "usuario1@gmail.com", 21, "usuario1", "admin");
-INSERT INTO users(id, username, email, age, passwd, rol) VALUES (null, "usuario2", "usuario2@gmail.com", 22, "usuario2", "admin");
+INSERT INTO users(id, username, email, age, passwd, rol) VALUES (null, "usuario1", "usuario1@gmail.com", 21, "$2y$12$mwQtDlw17MZdGBVcGEeyQO78wbfuq/gfF8Lhq3n7fpN6cTfNcrLuO", "admin");
+INSERT INTO users(id, username, email, age, passwd, rol) VALUES (null, "usuario2", "usuario2@gmail.com", 22, "$2y$12$RDRsSx.ff12XOvW6fPzy0ObqLGk3mSc.6CVg99pMs3Pwh50wWfd7m", "user");
 INSERT INTO users(id, username, email, age, passwd, rol) VALUES (null, "usuario3", "usuario3@gmail.com", 23, "$2y$12$mBsMRGCfWMev7cYoF6Z.9ekGrdXWf3VRHCWtYYey/TJWlYLq3Nm46", "user");
 INSERT INTO users(id, username, email, age, passwd, rol) VALUES (null, "usuario4", "usuario4@gmail.com", 24, "$2y$10$0dH7jXsUD6Awon25VaHGPuAc432l.BYgBjFR.ei68SLDm2nHLFglW", "admin");
 INSERT INTO users(id, username, email, age, passwd, rol) VALUES (null, "usuario5", "usuario5@gmail.com", 25, "usuario5", "user");

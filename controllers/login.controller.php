@@ -15,6 +15,6 @@ if ( !empty( $user ) || !empty( $passwd ) ) {
 
     // header('Location: apsojdpa');
 
-}else { echo 'error'; }
+}else { echo 'error_login'; }
 
 ?>
